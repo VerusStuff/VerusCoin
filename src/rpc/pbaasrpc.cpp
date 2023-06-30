@@ -7622,6 +7622,7 @@ UniValue IdOfferInfo(const CIdentity &identityOffer)
     UniValue retVal(UniValue::VOBJ);
     retVal.pushKV("name", identityOffer.name);
     retVal.pushKV("identityid", EncodeDestination(CIdentityID(identityOffer.GetID())));
+    retVal.pushKV("parent", EncodeDestination(CIdentityID(identityOffer.parent)));
     retVal.pushKV("systemid", EncodeDestination(CIdentityID(identityOffer.systemID)));
     retVal.pushKV("original", identityOffer.systemID == ASSETCHAINS_CHAINID);
     return retVal;
